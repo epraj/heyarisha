@@ -187,6 +187,29 @@
 
     /* ── RESUME ── */
     .resume-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .resume-preview-panel { margin-top: 20px; }
+    .resume-preview-head {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 14px; margin-bottom: 12px;
+    }
+    .resume-preview-head h3 { font-family: var(--serif); font-size: 1.1rem; font-weight: 600; color: var(--ink); }
+    .resume-preview-pages {
+      max-width: 860px; margin: 0 auto;
+      display: flex; flex-direction: column; gap: 16px;
+    }
+    .resume-preview-page {
+      display: block;
+      background: #fff; border: 1px solid var(--border);
+      border-radius: 14px; overflow: hidden;
+      box-shadow: 0 8px 28px rgba(15,28,46,.08);
+      transition: border-color .15s, box-shadow .15s, transform .15s;
+    }
+    .resume-preview-page:hover {
+      border-color: rgba(26,127,116,.28);
+      box-shadow: 0 12px 36px rgba(15,28,46,.12);
+      transform: translateY(-1px);
+    }
+    .resume-preview-page img { display: block; width: 100%; height: auto; }
     .skill-row { display: flex; flex-direction: column; gap: 14px; }
     .skill-item {}
     .skill-meta { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 6px; }
@@ -393,6 +416,18 @@
       nav a { padding: 7px 9px; font-size: .83rem; }
       .hero h1 { font-size: 2rem; }
       .hero-stats { grid-template-columns: 1fr 1fr 1fr; }
+      .resume-preview-head { align-items: flex-start; flex-direction: column; }
+    }
+
+    @media (max-width: 560px) {
+      .nav {
+        height: auto; padding: 10px 20px;
+        flex-direction: column; align-items: stretch; gap: 10px;
+      }
+      .brand-text span { display: none; }
+      nav ul { width: 100%; justify-content: space-between; gap: 2px; }
+      nav a { padding: 6px 7px; font-size: .78rem; }
+      .nav-cta { padding: 6px 10px; }
     }
   </style>
 </head>
@@ -558,7 +593,7 @@
               <div class="sh-eyebrow">Resume</div>
               <h2>Skills &amp; experience.</h2>
             </div>
-            <a class="btn btn-ghost" href="Arina_Rud_Resume_Reporting_Analyst.pdf" style="font-size:.88rem;">↓ Download Reporting Resume</a><a class="btn btn-ghost" href="Arina_Rud_Resume_Business_Support.pdf" style="font-size:.88rem;">↓ Download Support Resume</a>
+            <a class="btn btn-ghost" href="Arina_Rud_Resume_Reporting_Analyst.pdf" style="font-size:.88rem;">↓ Download Analytics Resume</a>
           </div>
           <div class="resume-grid">
             <div class="card">
@@ -616,6 +651,20 @@
                 <span class="tag">Financial documentation</span>
                 <span class="tag">Stakeholder communication</span>
               </div>
+            </div>
+          </div>
+          <div class="resume-preview-panel">
+            <div class="resume-preview-head">
+              <h3>Analytics resume preview</h3>
+              <a class="btn-sm btn-sm-ghost" href="Arina_Rud_Resume_Reporting_Analyst.pdf">Open PDF</a>
+            </div>
+            <div class="resume-preview-pages">
+              <a class="resume-preview-page" href="Arina_Rud_Resume_Reporting_Analyst.pdf" aria-label="Open analytics resume PDF">
+                <img src="images/resume-preview-page-1.png?v=2" alt="Page 1 preview of Arina Rud analytics resume" loading="lazy" />
+              </a>
+              <a class="resume-preview-page" href="Arina_Rud_Resume_Reporting_Analyst.pdf" aria-label="Open analytics resume PDF">
+                <img src="images/resume-preview-page-2.png?v=2" alt="Page 2 preview of Arina Rud analytics resume" loading="lazy" />
+              </a>
             </div>
           </div>
         </div>
