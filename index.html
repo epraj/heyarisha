@@ -366,7 +366,6 @@
     }
 
     .chart-stack { min-width: 0; display: flex; flex-direction: column; gap: 22px; }
-    .chart-grid { min-width: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
     .chart-figure { min-width: 0; margin: 0; }
     .chart-figure img {
       display: block; width: 100%; height: auto;
@@ -432,7 +431,6 @@
       .strengths-row { grid-template-columns: 1fr; }
       .resume-grid, .projects-grid, .contact-grid, .detail-grid { grid-template-columns: 1fr; }
       .project-card.featured, .detail-card.full { grid-column: span 1; }
-      .chart-grid { grid-template-columns: 1fr; }
       .featured-kpis { flex-wrap: wrap; gap: 16px; }
       .kpi-row { grid-template-columns: 1fr; }
       nav ul { gap: 0; }
@@ -939,13 +937,6 @@
         <div class="detail-grid">
 
           <div class="detail-card full">
-            <h2>Short summary</h2>
-            <p style="font-size:.93rem; color:var(--ink2); font-weight:300; line-height:1.7;">
-              This project looks at NSW emergency department results across three quarters in 2025. I compared metro and regional Local Health Districts, checked which measures declined, and used triage data to add context about patient mix over time.
-            </p>
-          </div>
-
-          <div class="detail-card">
             <h2>What I found</h2>
             <ul class="detail-list">
               <li>All four NSW target-time measures declined from Jan-Mar to Jul-Sep 2025.</li>
@@ -956,37 +947,24 @@
             </ul>
           </div>
 
-          <div class="detail-card">
-            <h2>Data &amp; definitions</h2>
-            <p style="font-size:.88rem; color:var(--ink3); margin-bottom:12px;">Source: public NSW health performance reporting exported into portfolio workbooks. Specified-time results are reported as % within target.</p>
-            <ul class="detail-list">
-              <li><strong>Discharged within 4 hours:</strong> % of ED presentations discharged within 4 hours.</li>
-              <li><strong>SSU within 4 hours:</strong> % admitted to ED short stay unit within 4 hours.</li>
-              <li><strong>Admit/transfer within 6 hours:</strong> % admitted to hospital or transferred within 6 hours.</li>
-              <li><strong>12 hours or less:</strong> % with total ED time of 12 hours or less.</li>
-            </ul>
-          </div>
-
           <div class="detail-card full">
-            <h2>Charts &amp; notes</h2>
+            <h2>What the charts show</h2>
             <div class="chart-stack">
               <figure class="chart-figure">
                 <img src="images/ed-metro-regional-trend.png" alt="Line chart showing metro and regional LHD discharge within 4 hours across 2025 quarters" loading="lazy" />
-                <figcaption><strong>Metro vs regional trend:</strong> Regional LHDs stayed higher in every quarter, but both groups moved down. Metro fell from 60.6% to 55.9%; regional fell from 73.3% to 70.2%.</figcaption>
+                <figcaption><strong>Metro vs regional:</strong> Regional LHDs stayed higher, but both groups declined by Jul-Sep 2025.</figcaption>
               </figure>
-              <div class="chart-grid">
-                <figure class="chart-figure">
-                  <img src="images/ed-lhd-change-bar.png" alt="Bar chart ranking LHD percentage-point change in discharge within 4 hours from Jan-Mar to Jul-Sep 2025" loading="lazy" />
-                  <figcaption><strong>LHD change:</strong> Sydney (-8.2 pp), South Eastern Sydney (-6.6 pp) and Central Coast (-5.3 pp) had the largest drops. St Vincent's Health Network was the only positive movement shown (+0.7 pp).</figcaption>
-                </figure>
-                <figure class="chart-figure">
-                  <img src="images/ed-lhd-heatmap.png" alt="Heatmap of LHD discharge within 4 hours by quarter and percentage-point change" loading="lazy" />
-                  <figcaption><strong>LHD heatmap:</strong> The heatmap shows that many regional LHDs started from a stronger position, but almost every LHD or network shown declined by Jul-Sep 2025.</figcaption>
-                </figure>
-              </div>
+              <figure class="chart-figure">
+                <img src="images/ed-lhd-change-bar.png" alt="Bar chart ranking LHD percentage-point change in discharge within 4 hours from Jan-Mar to Jul-Sep 2025" loading="lazy" />
+                <figcaption><strong>LHD change:</strong> Sydney, South Eastern Sydney and Central Coast had the largest drops in 4-hour discharge.</figcaption>
+              </figure>
+              <figure class="chart-figure">
+                <img src="images/ed-lhd-heatmap.png" alt="Heatmap of LHD discharge within 4 hours by quarter and percentage-point change" loading="lazy" />
+                <figcaption><strong>LHD heatmap:</strong> Many regional LHDs started from a stronger position, but almost every LHD or network shown declined by Jul-Sep 2025.</figcaption>
+              </figure>
               <figure class="chart-figure">
                 <img src="images/ed-triage-mix.png" alt="Stacked column chart showing NSW ED triage mix by quarter from 2010 to 2025" loading="lazy" />
-                <figcaption><strong>Triage mix context:</strong> T2 Emergency and T3 Urgent presentations make up a larger share over time, rising from about 38% in early 2010 to about 58% in Jul-Sep 2025. This helps show patient-mix context, but it does not explain the cause by itself.</figcaption>
+                <figcaption><strong>Triage mix:</strong> T2 Emergency and T3 Urgent presentations make up a larger share over time. This gives context, but it does not explain the cause by itself.</figcaption>
               </figure>
             </div>
           </div>
@@ -1003,12 +981,14 @@
           </div>
 
           <div class="detail-card">
-            <h2>What I would check next</h2>
+            <h2>Data notes</h2>
             <ul class="detail-list">
-              <li>2025 reporting reflects updated NSW Health Hospital Access target measures.</li>
+              <li>Source: public NSW health performance reporting exported into portfolio workbooks.</li>
+              <li>Target-time results are reported as % within target.</li>
+              <li>Measures include 4-hour discharge, SSU within 4 hours, admit/transfer within 6 hours, and 12 hours or less in ED.</li>
               <li>The metro and regional results use simple LHD averages. They are not weighted by ED visit numbers.</li>
+              <li>2025 reporting reflects updated NSW Health Hospital Access target measures.</li>
               <li>This report shows what changed. It does not prove why it changed.</li>
-              <li>Next I would check ED visit numbers, patient mix, admitted flow, capacity and staffing context.</li>
             </ul>
           </div>
 
