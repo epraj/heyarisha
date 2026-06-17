@@ -719,8 +719,8 @@
                 <span class="pc-num">Project 01</span>
                 <span class="badge badge-white">Portfolio case study</span>
               </div>
-              <h3>NSW ED Target Performance — Metro vs Regional</h3>
-              <p>A practice project using NSW health-style performance measures. It compares metro and regional results, checks the data, and summarises the main changes over time.</p>
+              <h3>NSW ED performance — Metro vs Regional</h3>
+              <p>A portfolio project looking at NSW emergency department results in 2025. It compares metro and regional LHDs, checks the data, and summarises the main changes.</p>
               <div class="featured-kpis">
                 <div class="fkpi">
                   <div class="fkpi-num">−4.7 pp</div>
@@ -905,8 +905,8 @@
             <span class="badge badge-published">Portfolio case study</span>
             <span style="font-size:.8rem; color:var(--ink3)">Project 01</span>
           </div>
-          <h1>NSW ED Target Performance<br>Metro vs Regional Portfolio Case Study</h1>
-          <p>Practice question: <strong>How is NSW ED within-target performance changing over time, and how do metro and regional results compare?</strong></p>
+          <h1>NSW ED performance<br>Metro vs Regional</h1>
+          <p>Project question: <strong>How did NSW ED performance change during 2025, and how did metro and regional results compare?</strong></p>
           <div class="tag-row" style="margin-top:14px;">
             <span class="tag teal">Excel</span>
             <span class="tag teal">KPI definitions</span>
@@ -939,19 +939,20 @@
         <div class="detail-grid">
 
           <div class="detail-card full">
-            <h2>Executive summary</h2>
+            <h2>Short summary</h2>
             <p style="font-size:.93rem; color:var(--ink2); font-weight:300; line-height:1.7;">
-              ED specified-time performance weakened across the three 2025 quarters reviewed. Metro LHDs remained below regional LHDs for 4-hour discharge performance, and the triage workbook adds context on changing ED presentation mix.
+              This project looks at NSW emergency department results across three quarters in 2025. I compared metro and regional Local Health Districts, checked which measures declined, and used triage data to add context about patient mix over time.
             </p>
           </div>
 
           <div class="detail-card">
-            <h2>Key findings</h2>
+            <h2>What I found</h2>
             <ul class="detail-list">
-              <li>All four NSW specified-time measures declined from Jan-Mar to Jul-Sep 2025.</li>
+              <li>All four NSW target-time measures declined from Jan-Mar to Jul-Sep 2025.</li>
               <li>Admit/transfer within 6 hours fell from 35.2% to 30.0%.</li>
-              <li>Regional LHDs performed higher than metro LHDs in each quarter, but both groups declined.</li>
-              <li>Sydney, South Eastern Sydney and Central Coast had the largest 4-hour discharge declines.</li>
+              <li>Metro LHDs had lower 4-hour discharge results than regional LHDs.</li>
+              <li>Both metro and regional results declined by Jul-Sep 2025.</li>
+              <li>Sydney, South Eastern Sydney and Central Coast had the largest drops.</li>
             </ul>
           </div>
 
@@ -976,38 +977,38 @@
               <div class="chart-grid">
                 <figure class="chart-figure">
                   <img src="images/ed-lhd-change-bar.png" alt="Bar chart ranking LHD percentage-point change in discharge within 4 hours from Jan-Mar to Jul-Sep 2025" loading="lazy" />
-                  <figcaption><strong>LHD change:</strong> Sydney (-8.2 pp), South Eastern Sydney (-6.6 pp) and Central Coast (-5.3 pp) had the largest declines. St Vincent's Health Network was the only positive movement shown (+0.7 pp).</figcaption>
+                  <figcaption><strong>LHD change:</strong> Sydney (-8.2 pp), South Eastern Sydney (-6.6 pp) and Central Coast (-5.3 pp) had the largest drops. St Vincent's Health Network was the only positive movement shown (+0.7 pp).</figcaption>
                 </figure>
                 <figure class="chart-figure">
                   <img src="images/ed-lhd-heatmap.png" alt="Heatmap of LHD discharge within 4 hours by quarter and percentage-point change" loading="lazy" />
-                  <figcaption><strong>LHD heatmap:</strong> The heatmap shows higher regional baseline results, but almost every LHD or network shown declined by Jul-Sep 2025.</figcaption>
+                  <figcaption><strong>LHD heatmap:</strong> The heatmap shows that many regional LHDs started from a stronger position, but almost every LHD or network shown declined by Jul-Sep 2025.</figcaption>
                 </figure>
               </div>
               <figure class="chart-figure">
                 <img src="images/ed-triage-mix.png" alt="Stacked column chart showing NSW ED triage mix by quarter from 2010 to 2025" loading="lazy" />
-                <figcaption><strong>Triage mix context:</strong> T2 Emergency and T3 Urgent presentations make up a larger share over time, rising from about 38% in early 2010 to about 58% in Jul-Sep 2025. This provides demand and patient-mix context, not a causal explanation.</figcaption>
+                <figcaption><strong>Triage mix context:</strong> T2 Emergency and T3 Urgent presentations make up a larger share over time, rising from about 38% in early 2010 to about 58% in Jul-Sep 2025. This helps show patient-mix context, but it does not explain the cause by itself.</figcaption>
               </figure>
             </div>
           </div>
 
           <div class="detail-card">
-            <h2>Methodology</h2>
+            <h2>How I built the report</h2>
             <ul class="detail-list">
-              <li>Filtered specified-time ED measures to Jan-Mar, Apr-Jun and Jul-Sep 2025.</li>
+              <li>Filtered ED target-time measures to Jan-Mar, Apr-Jun and Jul-Sep 2025.</li>
               <li>Built pivot summaries for NSW, LHD and metro vs regional views.</li>
               <li>Calculated percentage-point change from Jan-Mar to Jul-Sep 2025.</li>
-              <li>Used triage data to review presentation volume and category mix as context.</li>
-              <li>Checked missing values, 0-100% ranges, quarter order and calculation logic.</li>
+              <li>Used triage data to review ED visit numbers and category mix.</li>
+              <li>Checked missing values, 0-100% ranges, quarter order and calculations.</li>
             </ul>
           </div>
 
           <div class="detail-card">
-            <h2>Limitations &amp; next questions</h2>
+            <h2>What I would check next</h2>
             <ul class="detail-list">
               <li>2025 reporting reflects updated NSW Health Hospital Access target measures.</li>
-              <li>Metro and regional figures are simple LHD averages, not presentation-weighted rates.</li>
-              <li>The analysis shows movement, not the cause of movement.</li>
-              <li>Next review: attendance volume, patient mix, admitted flow, capacity and staffing context.</li>
+              <li>The metro and regional results use simple LHD averages. They are not weighted by ED visit numbers.</li>
+              <li>This report shows what changed. It does not prove why it changed.</li>
+              <li>Next I would check ED visit numbers, patient mix, admitted flow, capacity and staffing context.</li>
             </ul>
           </div>
 
@@ -1017,7 +1018,7 @@
               <a class="file-link" href="downloads/results-by-time-lhd.xlsx" download>
                 <span>
                   <span class="file-title">Results_by_time_LHD.xlsx</span>
-                  <span class="file-meta">Specified-time ED measures, LHD heatmap, percentage-point change and metro vs regional summary.</span>
+                  <span class="file-meta">ED target-time measures, LHD heatmap, percentage-point change and metro vs regional summary.</span>
                 </span>
                 <span class="file-action">Download</span>
               </a>
