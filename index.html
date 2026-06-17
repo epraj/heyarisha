@@ -387,7 +387,9 @@
     }
     .chart-figure { min-width: 0; margin: 0; }
     .chart-figure img {
-      display: block; width: 100%; height: auto;
+      display: block; width: auto; max-width: 100%; height: auto;
+      max-height: min(60vh, 500px); margin: 0 auto;
+      object-fit: contain;
       border: 1px solid var(--border); border-radius: 10px;
       background: #fff;
     }
@@ -476,10 +478,9 @@
       .chart-figure {
         width: 100%;
         max-width: 100%;
-        overflow-x: auto;
         padding-bottom: 2px;
       }
-      .chart-figure img { min-width: 680px; }
+      .chart-figure img { width: 100%; max-height: none; }
       .file-link { flex-direction: column; align-items: flex-start; }
     }
   </style>
