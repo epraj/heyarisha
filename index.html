@@ -351,7 +351,7 @@
     .kpi-lbl { font-size: .8rem; color: var(--ink3); font-weight: 400; margin-top: 4px; line-height: 1.3; }
 
     .detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-    .detail-card { background: #fff; border: 1px solid var(--border); border-radius: 14px; padding: 24px; }
+    .detail-card { min-width: 0; background: #fff; border: 1px solid var(--border); border-radius: 14px; padding: 24px; }
     .detail-card.full { grid-column: span 2; }
     .detail-card h2 { font-family: var(--serif); font-size: 1.1rem; font-weight: 600; margin-bottom: 14px; color: var(--ink); }
 
@@ -365,13 +365,31 @@
       color: var(--ink2); font-size: .9rem; line-height: 1.65; margin-top: 14px; font-weight: 300;
     }
 
-    .figure-placeholder {
-      border: 2px dashed rgba(26,127,116,.25); border-radius: 12px;
-      padding: 40px 24px; text-align: center;
-      background: var(--teal-lt);
-      color: var(--teal); font-size: .88rem; font-weight: 500;
+    .chart-stack { min-width: 0; display: flex; flex-direction: column; gap: 22px; }
+    .chart-grid { min-width: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .chart-figure { min-width: 0; margin: 0; }
+    .chart-figure img {
+      display: block; width: 100%; height: auto;
+      border: 1px solid var(--border); border-radius: 10px;
+      background: #fff;
     }
-    .figure-placeholder small { display: block; margin-top: 6px; color: var(--ink3); font-weight: 400; font-family: monospace; font-size: .78rem; }
+    .chart-figure figcaption {
+      margin-top: 9px; color: var(--ink3);
+      font-size: .84rem; font-weight: 300; line-height: 1.55;
+    }
+    .chart-figure figcaption strong { color: var(--ink); font-weight: 600; }
+
+    .file-list { display: flex; flex-direction: column; gap: 10px; }
+    .file-link {
+      display: flex; justify-content: space-between; gap: 16px; align-items: center;
+      border: 1px solid var(--border); border-radius: 11px;
+      padding: 13px 15px; background: var(--paper);
+      transition: border-color .15s, background .15s;
+    }
+    .file-link:hover { border-color: rgba(26,127,116,.25); background: var(--teal-lt); }
+    .file-title { display: block; font-size: .9rem; font-weight: 600; color: var(--ink); }
+    .file-meta { display: block; font-size: .78rem; color: var(--ink3); font-weight: 300; margin-top: 2px; }
+    .file-action { font-size: .78rem; font-weight: 600; color: var(--teal); white-space: nowrap; }
 
     /* ── ABOUT ── */
     .about-layout { display: grid; grid-template-columns: 260px 1fr; gap: 36px; align-items: start; margin-bottom: 32px; }
@@ -414,6 +432,7 @@
       .strengths-row { grid-template-columns: 1fr; }
       .resume-grid, .projects-grid, .contact-grid, .detail-grid { grid-template-columns: 1fr; }
       .project-card.featured, .detail-card.full { grid-column: span 1; }
+      .chart-grid { grid-template-columns: 1fr; }
       .featured-kpis { flex-wrap: wrap; gap: 16px; }
       .kpi-row { grid-template-columns: 1fr; }
       nav ul { gap: 0; }
@@ -432,6 +451,14 @@
       nav ul { width: 100%; justify-content: space-between; gap: 2px; }
       nav a { padding: 6px 7px; font-size: .78rem; }
       .nav-cta { padding: 6px 10px; }
+      .chart-figure {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: auto;
+        padding-bottom: 2px;
+      }
+      .chart-figure img { min-width: 680px; }
+      .file-link { flex-direction: column; align-items: flex-start; }
     }
   </style>
 </head>
@@ -885,86 +912,130 @@
             <span class="tag teal">KPI definitions</span>
             <span class="tag">Trend analysis</span>
             <span class="tag">Metro vs Regional</span>
+            <span class="tag">Triage mix</span>
           </div>
           <div class="cta-row" style="margin-top:18px;">
-            <a class="btn btn-primary" href="#" onclick="return false;">↓ Workbook coming soon</a>
-            <a class="btn btn-ghost" href="#" onclick="return false;">↗ GitHub coming soon</a>
+            <a class="btn btn-primary" href="downloads/results-by-time-lhd.xlsx" download>↓ ED workbook</a>
+            <a class="btn btn-ghost" href="downloads/results-by-triage.xlsx" download>↓ Triage workbook</a>
+            <a class="btn btn-ghost" href="https://github.com/epraj/heyarisha/tree/main/downloads" target="_blank" rel="noopener">↗ GitHub files</a>
           </div>
         </div>
 
         <div class="kpi-row">
           <div class="kpi-card">
+            <div class="kpi-num">−3.5 pp</div>
+            <div class="kpi-lbl">NSW discharge within 4 hrs<br>66.7% → 63.2%</div>
+          </div>
+          <div class="kpi-card">
             <div class="kpi-num">−4.7 pp</div>
-            <div class="kpi-lbl">Metro discharge within 4 hrs<br>Jan–Mar → Jul–Sep 2025</div>
+            <div class="kpi-lbl">Metro LHD 4-hr discharge<br>60.6% → 55.9%</div>
           </div>
           <div class="kpi-card">
             <div class="kpi-num">−3.1 pp</div>
-            <div class="kpi-lbl">Regional discharge within 4 hrs<br>same period</div>
-          </div>
-          <div class="kpi-card">
-            <div class="kpi-num">30.0%</div>
-            <div class="kpi-lbl">Admit/transfer within 6 hrs<br>Jul–Sep 2025</div>
+            <div class="kpi-lbl">Regional LHD 4-hr discharge<br>73.3% → 70.2%</div>
           </div>
         </div>
 
         <div class="detail-grid">
 
           <div class="detail-card full">
-            <h2>Key findings</h2>
+            <h2>Executive summary</h2>
             <p style="font-size:.93rem; color:var(--ink2); font-weight:300; line-height:1.7;">
-              The project compares metro and regional performance over time. It looks at which measures are improving or declining, and where results may need more detailed review.
+              ED specified-time performance weakened across the three 2025 quarters reviewed. Metro LHDs remained below regional LHDs for 4-hour discharge performance, and the triage workbook adds context on changing ED presentation mix.
             </p>
-            <div class="callout">
-              <strong>Interpretation:</strong> Some measures appear weaker than others. This may point to patient flow or capacity issues, but more data would be needed before making a final conclusion.
-            </div>
+          </div>
+
+          <div class="detail-card">
+            <h2>Key findings</h2>
+            <ul class="detail-list">
+              <li>All four NSW specified-time measures declined from Jan-Mar to Jul-Sep 2025.</li>
+              <li>Admit/transfer within 6 hours fell from 35.2% to 30.0%.</li>
+              <li>Regional LHDs performed higher than metro LHDs in each quarter, but both groups declined.</li>
+              <li>Sydney, South Eastern Sydney and Central Coast had the largest 4-hour discharge declines.</li>
+            </ul>
           </div>
 
           <div class="detail-card">
             <h2>Data &amp; definitions</h2>
-            <p style="font-size:.88rem; color:var(--ink3); margin-bottom:12px;">Source: <em>Public NSW health performance reporting / portfolio dataset notes</em>. All metrics are reported as % within target.</p>
+            <p style="font-size:.88rem; color:var(--ink3); margin-bottom:12px;">Source: public NSW health performance reporting exported into portfolio workbooks. Specified-time results are reported as % within target.</p>
             <ul class="detail-list">
               <li><strong>Discharged within 4 hours:</strong> % of ED presentations discharged within 4 hours.</li>
               <li><strong>SSU within 4 hours:</strong> % admitted to ED short stay unit within 4 hours.</li>
               <li><strong>Admit/transfer within 6 hours:</strong> % admitted to hospital or transferred within 6 hours.</li>
-              <li><strong>12 hours or less:</strong> % with total ED time ≤ 12 hours.</li>
-            </ul>
-          </div>
-
-          <div class="detail-card">
-            <h2>Data checks</h2>
-            <ul class="detail-list">
-              <li>Checked for missing values and percentage values outside the 0–100% range.</li>
-              <li>Checked the metro and regional groupings used in the analysis.</li>
-              <li>Checked date ordering and percentage-point change calculations.</li>
-              <li>Noted any incomplete or unclear data in a QA log.</li>
+              <li><strong>12 hours or less:</strong> % with total ED time of 12 hours or less.</li>
             </ul>
           </div>
 
           <div class="detail-card full">
-            <h2>Visual outputs</h2>
-            <div class="figure-placeholder">
-              📊 Chart placeholder — replace with exported image
-              <small>&lt;img src="assets/ed-line-chart.png" alt="Metro vs Regional discharge within 4 hours" style="width:100%; border-radius:10px;" /&gt;</small>
+            <h2>Charts &amp; notes</h2>
+            <div class="chart-stack">
+              <figure class="chart-figure">
+                <img src="images/ed-metro-regional-trend.png" alt="Line chart showing metro and regional LHD discharge within 4 hours across 2025 quarters" loading="lazy" />
+                <figcaption><strong>Metro vs regional trend:</strong> Regional LHDs stayed higher in every quarter, but both groups moved down. Metro fell from 60.6% to 55.9%; regional fell from 73.3% to 70.2%.</figcaption>
+              </figure>
+              <div class="chart-grid">
+                <figure class="chart-figure">
+                  <img src="images/ed-lhd-change-bar.png" alt="Bar chart ranking LHD percentage-point change in discharge within 4 hours from Jan-Mar to Jul-Sep 2025" loading="lazy" />
+                  <figcaption><strong>LHD change:</strong> Sydney (-8.2 pp), South Eastern Sydney (-6.6 pp) and Central Coast (-5.3 pp) had the largest declines. St Vincent's Health Network was the only positive movement shown (+0.7 pp).</figcaption>
+                </figure>
+                <figure class="chart-figure">
+                  <img src="images/ed-lhd-heatmap.png" alt="Heatmap of LHD discharge within 4 hours by quarter and percentage-point change" loading="lazy" />
+                  <figcaption><strong>LHD heatmap:</strong> The heatmap shows higher regional baseline results, but almost every LHD or network shown declined by Jul-Sep 2025.</figcaption>
+                </figure>
+              </div>
+              <figure class="chart-figure">
+                <img src="images/ed-triage-mix.png" alt="Stacked column chart showing NSW ED triage mix by quarter from 2010 to 2025" loading="lazy" />
+                <figcaption><strong>Triage mix context:</strong> T2 Emergency and T3 Urgent presentations make up a larger share over time, rising from about 38% in early 2010 to about 58% in Jul-Sep 2025. This provides demand and patient-mix context, not a causal explanation.</figcaption>
+              </figure>
             </div>
-            <p style="font-size:.85rem; color:var(--ink3); margin-top:10px; font-style:italic;">Caption example: "Discharge within 4 hours declined in both cohorts, with a larger drop observed in Metro LHDs by Jul–Sep 2025."</p>
           </div>
 
           <div class="detail-card">
-            <h2>Main findings &amp; next questions</h2>
+            <h2>Methodology</h2>
             <ul class="detail-list">
-              <li>Which Local Health Districts are driving the biggest changes?</li>
-              <li>Do attendance numbers or patient mix explain some of the results?</li>
-              <li>Could hospital capacity data help explain the weaker measures?</li>
+              <li>Filtered specified-time ED measures to Jan-Mar, Apr-Jun and Jul-Sep 2025.</li>
+              <li>Built pivot summaries for NSW, LHD and metro vs regional views.</li>
+              <li>Calculated percentage-point change from Jan-Mar to Jul-Sep 2025.</li>
+              <li>Used triage data to review presentation volume and category mix as context.</li>
+              <li>Checked missing values, 0-100% ranges, quarter order and calculation logic.</li>
             </ul>
           </div>
 
           <div class="detail-card">
-            <h2>Project outputs</h2>
+            <h2>Limitations &amp; next questions</h2>
             <ul class="detail-list">
-              <li>Excel workbook with pivot tables, QA notes and charts</li>
-              <li>One-page summary with simple findings and chart notes</li>
-              <li>Notes on assumptions, limitations and data sources</li>
+              <li>2025 reporting reflects updated NSW Health Hospital Access target measures.</li>
+              <li>Metro and regional figures are simple LHD averages, not presentation-weighted rates.</li>
+              <li>The analysis shows movement, not the cause of movement.</li>
+              <li>Next review: attendance volume, patient mix, admitted flow, capacity and staffing context.</li>
             </ul>
+          </div>
+
+          <div class="detail-card full">
+            <h2>Project files</h2>
+            <div class="file-list">
+              <a class="file-link" href="downloads/results-by-time-lhd.xlsx" download>
+                <span>
+                  <span class="file-title">Results_by_time_LHD.xlsx</span>
+                  <span class="file-meta">Specified-time ED measures, LHD heatmap, percentage-point change and metro vs regional summary.</span>
+                </span>
+                <span class="file-action">Download</span>
+              </a>
+              <a class="file-link" href="downloads/results-by-triage.xlsx" download>
+                <span>
+                  <span class="file-title">Results_by_triage.xlsx</span>
+                  <span class="file-meta">Triage presentation counts and category mix from 2010 to Jul-Sep 2025.</span>
+                </span>
+                <span class="file-action">Download</span>
+              </a>
+              <a class="file-link" href="https://github.com/epraj/heyarisha/tree/main/downloads" target="_blank" rel="noopener">
+                <span>
+                  <span class="file-title">GitHub project files</span>
+                  <span class="file-meta">Source files in the heyarisha.com repository.</span>
+                </span>
+                <span class="file-action">Open GitHub</span>
+              </a>
+            </div>
           </div>
 
         </div>
