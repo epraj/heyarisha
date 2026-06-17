@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-labelledby="title desc">
+  <title id="title">% discharged within 4 hours, Metro vs Regional, 2025</title>
+  <desc id="desc">Line chart showing metro results falling from 60.6% to 55.9%, and regional results falling from 73.3% to 70.2%.</desc>
+  <rect width="960" height="540" fill="#ffffff"/>
+  <text x="480" y="42" text-anchor="middle" font-family="Arial, sans-serif" font-size="25" font-weight="700" fill="#334155">% discharged within 4 hours, 2025</text>
+  <text x="480" y="70" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#64748b">Metro vs regional LHD groups</text>
+  
+    <line x1="76" y1="444.0" x2="888" y2="444.0" stroke="#e2e8f0" stroke-width="1"/>
+    <text x="58" y="449.0" text-anchor="end" font-family="Arial, sans-serif" font-size="15" fill="#64748b">50%</text>
+    <line x1="76" y1="370.8" x2="888" y2="370.8" stroke="#e2e8f0" stroke-width="1"/>
+    <text x="58" y="375.8" text-anchor="end" font-family="Arial, sans-serif" font-size="15" fill="#64748b">55%</text>
+    <line x1="76" y1="297.6" x2="888" y2="297.6" stroke="#e2e8f0" stroke-width="1"/>
+    <text x="58" y="302.6" text-anchor="end" font-family="Arial, sans-serif" font-size="15" fill="#64748b">60%</text>
+    <line x1="76" y1="224.4" x2="888" y2="224.4" stroke="#e2e8f0" stroke-width="1"/>
+    <text x="58" y="229.4" text-anchor="end" font-family="Arial, sans-serif" font-size="15" fill="#64748b">65%</text>
+    <line x1="76" y1="151.2" x2="888" y2="151.2" stroke="#e2e8f0" stroke-width="1"/>
+    <text x="58" y="156.2" text-anchor="end" font-family="Arial, sans-serif" font-size="15" fill="#64748b">70%</text>
+    <line x1="76" y1="78.0" x2="888" y2="78.0" stroke="#e2e8f0" stroke-width="1"/>
+    <text x="58" y="83.0" text-anchor="end" font-family="Arial, sans-serif" font-size="15" fill="#64748b">75%</text>
+  
+    <text x="76.0" y="482" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="600" fill="#475569">Jan-Mar 2025</text>
+    <text x="482.0" y="482" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="600" fill="#475569">Apr-Jun 2025</text>
+    <text x="888.0" y="482" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="600" fill="#475569">Jul-Sep 2025</text>
+  <path d="M 76.0 102.9 L 482.0 108.7 L 888.0 148.3" fill="none" stroke="#f07a2f" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M 76.0 288.8 L 482.0 307.8 L 888.0 357.6" fill="none" stroke="#3f72c8" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  
+    <rect x="68.0" y="94.9" width="16" height="16" fill="#f07a2f"/>
+    <text x="76.0" y="84.9" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#f07a2f">73.3%</text>
+    <rect x="474.0" y="100.7" width="16" height="16" fill="#f07a2f"/>
+    <text x="482.0" y="90.7" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#f07a2f">72.9%</text>
+    <rect x="880.0" y="140.3" width="16" height="16" fill="#f07a2f"/>
+    <text x="888.0" y="130.3" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#f07a2f">70.2%</text>
+  
+    <rect x="68.0" y="280.8" width="16" height="16" fill="#3f72c8"/>
+    <text x="76.0" y="270.8" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#3f72c8">60.6%</text>
+    <rect x="474.0" y="299.8" width="16" height="16" fill="#3f72c8"/>
+    <text x="482.0" y="289.8" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#3f72c8">59.3%</text>
+    <rect x="880.0" y="349.6" width="16" height="16" fill="#3f72c8"/>
+    <text x="888.0" y="339.6" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#3f72c8">55.9%</text>
+  <g transform="translate(370 512)" font-family="Arial, sans-serif" font-size="16" fill="#475569">
+    <rect x="0" y="-12" width="16" height="16" fill="#3f72c8"/><text x="26" y="2">Metro</text>
+    <rect x="110" y="-12" width="16" height="16" fill="#f07a2f"/><text x="136" y="2">Regional</text>
+  </g>
+</svg>

@@ -333,6 +333,7 @@
 
     /* ── PROJECT DETAIL PAGE ── */
     .project-page { display: none; }
+    .project-page .wrap { max-width: 1180px; }
 
     .breadcrumb { display: flex; align-items: center; gap: 8px; font-size: .83rem; color: var(--ink3); margin-bottom: 28px; }
     .breadcrumb a { color: var(--teal); font-weight: 500; }
@@ -369,7 +370,21 @@
       color: var(--ink2); font-size: .9rem; line-height: 1.65; margin-top: 14px; font-weight: 300;
     }
 
-    .chart-stack { min-width: 0; display: flex; flex-direction: column; gap: 22px; }
+    .chart-stack { min-width: 0; display: flex; flex-direction: column; gap: 28px; }
+    .chart-item { min-width: 0; padding-top: 24px; border-top: 1px solid var(--border); }
+    .chart-item:first-child { padding-top: 0; border-top: 0; }
+    .chart-item-head {
+      display: flex; justify-content: space-between; align-items: baseline;
+      gap: 16px; margin-bottom: 12px;
+    }
+    .chart-item h3 {
+      font-family: var(--serif); font-size: 1.05rem; line-height: 1.35;
+      font-weight: 600; color: var(--ink); margin: 0;
+    }
+    .chart-open {
+      font-size: .78rem; font-weight: 600; color: var(--teal);
+      white-space: nowrap;
+    }
     .chart-figure { min-width: 0; margin: 0; }
     .chart-figure img {
       display: block; width: 100%; height: auto;
@@ -381,6 +396,11 @@
       font-size: .84rem; font-weight: 300; line-height: 1.55;
     }
     .chart-figure figcaption strong { color: var(--ink); font-weight: 600; }
+    .chart-takeaway {
+      margin-top: 11px; color: var(--ink2);
+      font-size: .9rem; font-weight: 300; line-height: 1.6;
+    }
+    .chart-takeaway strong { color: var(--ink); font-weight: 600; }
 
     .file-list { display: flex; flex-direction: column; gap: 10px; }
     .file-link {
@@ -956,22 +976,49 @@
           <div class="detail-card full">
             <h2>What the charts show</h2>
             <div class="chart-stack">
-              <figure class="chart-figure">
-                <img src="images/ed-metro-regional-line.png" alt="Line chart showing metro and regional LHD discharge within 4 hours across 2025 quarters" loading="lazy" />
-                <figcaption><strong>Metro vs regional:</strong> Regional LHDs stayed higher than metro LHDs, but both groups fell by Jul-Sep 2025.</figcaption>
-              </figure>
-              <figure class="chart-figure">
-                <img src="images/ed-lhd-change-bar-chart.png" alt="Bar chart ranking LHD percentage-point change in discharge within 4 hours from Jan-Mar to Jul-Sep 2025" loading="lazy" />
-                <figcaption><strong>LHD change:</strong> Sydney, South Eastern Sydney and Central Coast had the largest drops in 4-hour discharge.</figcaption>
-              </figure>
-              <figure class="chart-figure">
-                <img src="images/ed-lhd-heatmap.png" alt="Heatmap of LHD discharge within 4 hours by quarter and percentage-point change" loading="lazy" />
-                <figcaption><strong>LHD heatmap:</strong> Many regional LHDs started from a stronger position, but almost every LHD or network shown declined by Jul-Sep 2025.</figcaption>
-              </figure>
-              <figure class="chart-figure">
-                <img src="images/ed-triage-mix.png" alt="Stacked column chart showing NSW ED triage mix by quarter from 2010 to 2025" loading="lazy" />
-                <figcaption><strong>Triage mix:</strong> Emergency and urgent presentations make up a larger share over time. This may help explain pressure on ED performance, but it does not prove the cause.</figcaption>
-              </figure>
+              <section class="chart-item">
+                <div class="chart-item-head">
+                  <h3>1. Metro vs regional trend</h3>
+                  <a class="chart-open" href="images/ed-metro-regional-trend.svg" target="_blank" rel="noopener">Open full size</a>
+                </div>
+                <figure class="chart-figure">
+                  <img src="images/ed-metro-regional-trend.svg" alt="Line chart showing metro and regional LHD discharge within 4 hours across 2025 quarters" loading="lazy" />
+                </figure>
+                <p class="chart-takeaway"><strong>Key takeaway:</strong> Regional LHDs stayed higher than metro LHDs, but both groups fell by Jul-Sep 2025.</p>
+              </section>
+
+              <section class="chart-item">
+                <div class="chart-item-head">
+                  <h3>2. Largest LHD drops</h3>
+                  <a class="chart-open" href="images/ed-lhd-change-bar-clean.svg" target="_blank" rel="noopener">Open full size</a>
+                </div>
+                <figure class="chart-figure">
+                  <img src="images/ed-lhd-change-bar-clean.svg" alt="Bar chart ranking LHD percentage-point change in discharge within 4 hours from Jan-Mar to Jul-Sep 2025" loading="lazy" />
+                </figure>
+                <p class="chart-takeaway"><strong>Key takeaway:</strong> Sydney, South Eastern Sydney and Central Coast had the largest drops in 4-hour discharge.</p>
+              </section>
+
+              <section class="chart-item">
+                <div class="chart-item-head">
+                  <h3>3. LHD detail view</h3>
+                  <a class="chart-open" href="images/ed-lhd-heatmap.png" target="_blank" rel="noopener">Open full size</a>
+                </div>
+                <figure class="chart-figure">
+                  <img src="images/ed-lhd-heatmap.png" alt="Heatmap of LHD discharge within 4 hours by quarter and percentage-point change" loading="lazy" />
+                </figure>
+                <p class="chart-takeaway"><strong>Key takeaway:</strong> Many regional LHDs started from a stronger position, but almost every LHD or network shown declined by Jul-Sep 2025.</p>
+              </section>
+
+              <section class="chart-item">
+                <div class="chart-item-head">
+                  <h3>4. Triage mix context</h3>
+                  <a class="chart-open" href="images/ed-triage-mix.svg" target="_blank" rel="noopener">Open full size</a>
+                </div>
+                <figure class="chart-figure">
+                  <img src="images/ed-triage-mix.svg" alt="Stacked column chart showing NSW ED triage mix by quarter from 2010 to 2025" loading="lazy" />
+                </figure>
+                <p class="chart-takeaway"><strong>Key takeaway:</strong> Emergency and urgent presentations make up a larger share over time. This may help explain pressure on ED performance, but it does not prove the cause.</p>
+              </section>
             </div>
           </div>
 
