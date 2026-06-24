@@ -348,6 +348,7 @@
     .detail-hero p { color: var(--ink2); font-size: 1.0rem; font-weight: 300; line-height: 1.7; }
 
     .kpi-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: 28px 0; }
+    .kpi-row.four { grid-template-columns: repeat(4, 1fr); }
     .kpi-card {
       background: #fff; border: 1px solid var(--border); border-radius: 12px;
       padding: 20px; text-align: center;
@@ -404,6 +405,19 @@
     }
     .chart-takeaway strong { color: var(--ink); font-weight: 600; }
 
+    .powerbi-embed {
+      border: 1px solid var(--border); border-radius: 12px;
+      overflow: hidden; background: #fff;
+      aspect-ratio: 16 / 9;
+    }
+    .powerbi-embed iframe {
+      display: block; width: 100%; height: 100%; border: 0;
+    }
+    .embed-note {
+      margin-top: 12px; color: var(--ink3);
+      font-size: .84rem; font-weight: 300; line-height: 1.55;
+    }
+
     .file-list { display: flex; flex-direction: column; gap: 10px; }
     .file-link {
       display: flex; justify-content: space-between; gap: 16px; align-items: center;
@@ -458,7 +472,7 @@
       .resume-grid, .projects-grid, .contact-grid, .detail-grid { grid-template-columns: 1fr; }
       .project-card.featured, .detail-card.full { grid-column: span 1; }
       .featured-kpis { flex-wrap: wrap; gap: 16px; }
-      .kpi-row { grid-template-columns: 1fr; }
+      .kpi-row, .kpi-row.four { grid-template-columns: 1fr; }
       nav ul { gap: 0; }
       nav a { padding: 7px 9px; font-size: .83rem; }
       .hero h1 { font-size: 2rem; }
@@ -774,17 +788,17 @@
             <article class="project-card" aria-label="Project 2 — Elective Surgery">
               <div class="pc-top">
                 <span class="pc-num">Project 02</span>
-                <span class="badge badge-wip">In progress</span>
+                <span class="badge badge-published">Portfolio case study</span>
               </div>
-              <h3>Elective Surgery — Wait Times &amp; Recovery</h3>
-              <p>A planned project looking at waitlist changes across NSW health services, using SQL and Excel summaries.</p>
+              <h3>Elective Surgery Dashboard</h3>
+              <p>A Power BI dashboard project looking at waiting lists, overdue patients and on-time surgery performance across NSW health services.</p>
               <div class="pc-footer">
                 <div class="pc-tags">
-                  <span class="tag">SQL</span>
-                  <span class="tag">Excel</span>
+                  <span class="tag">Power BI</span>
+                  <span class="tag">Dashboard</span>
                 </div>
                 <div class="pc-actions">
-                  <span class="btn-sm btn-sm-ghost" style="cursor:default;opacity:.55">Coming soon</span>
+                  <a class="btn-sm btn-sm-ghost" href="#project-surgery">Read case study →</a>
                 </div>
               </div>
             </article>
@@ -1094,12 +1108,182 @@
         </footer>
       </div>
     </div>
+
+    <div id="project-surgery" class="project-page">
+      <div class="wrap" style="padding-top:36px; padding-bottom:52px;">
+
+        <div class="breadcrumb">
+          <a href="#projects">← Projects</a>
+          <span class="breadcrumb-sep">/</span>
+          <span>Elective Surgery Dashboard</span>
+        </div>
+
+        <div class="detail-hero">
+          <div style="display:flex; align-items:center; gap:10px; margin-bottom:14px;">
+            <span class="badge badge-published">Portfolio case study</span>
+            <span style="font-size:.8rem; color:var(--ink3)">Project 02</span>
+          </div>
+          <h1>Elective Surgery Dashboard</h1>
+          <div class="detail-subtitle">NSW waiting lists, overdue patients and on-time performance</div>
+          <p>Project question: <strong>How has elective surgery performance changed over time, and which Local Health Districts show the highest waiting list and overdue patient pressure?</strong></p>
+          <div class="tag-row" style="margin-top:14px;">
+            <span class="tag teal">Power BI</span>
+            <span class="tag teal">Dashboard</span>
+            <span class="tag">Trend analysis</span>
+            <span class="tag">LHD comparison</span>
+            <span class="tag">Public health data</span>
+          </div>
+          <div class="cta-row" style="margin-top:18px;">
+            <a class="btn btn-primary" href="https://app.powerbi.com/view?r=eyJrIjoiYjdlMjUyMGUtMGU5Yy00NzFmLTgxZGYtMDdkZmU3NmIyOTkxIiwidCI6IjNjMDdlNzJiLTEzNzUtNDk4NC1hOTc3LTM1ZmE2NWMyYTMxZCJ9" target="_blank" rel="noopener">↗ Open dashboard</a>
+            <a class="btn btn-ghost" href="downloads/elective-surgery-power-bi-dashboard.pdf" download>↓ PDF export</a>
+          </div>
+        </div>
+
+        <div class="kpi-row four">
+          <div class="kpi-card">
+            <div class="kpi-num">3.56M</div>
+            <div class="kpi-lbl">Total surgeries<br>Jan 2010-Mar 2026</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-num">41%</div>
+            <div class="kpi-lbl">Waiting list growth<br>2010 to latest quarter</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-num">54%</div>
+            <div class="kpi-lbl">Overdue patient growth<br>2010 to latest quarter</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-num">83.4%</div>
+            <div class="kpi-lbl">On-time rate<br>Jan-Mar 2026</div>
+          </div>
+        </div>
+
+        <div class="detail-grid">
+
+          <div class="detail-card full">
+            <h2>Interactive dashboard</h2>
+            <div class="powerbi-embed">
+              <iframe title="NSW elective surgery Power BI dashboard" src="https://app.powerbi.com/view?r=eyJrIjoiYjdlMjUyMGUtMGU5Yy00NzFmLTgxZGYtMDdkZmU3NmIyOTkxIiwidCI6IjNjMDdlNzJiLTEzNzUtNDk4NC1hOTc3LTM1ZmE2NWMyYTMxZCJ9" allowfullscreen="true" loading="lazy"></iframe>
+            </div>
+            <p class="embed-note">This public Power BI report can be filtered by reporting level and Local Health District. If the embedded view does not load, use the Open dashboard button above.</p>
+          </div>
+
+          <div class="detail-card full">
+            <h2>What I found</h2>
+            <ul class="detail-list">
+              <li>Waiting lists grew over the long term, especially after 2018.</li>
+              <li>Overdue patients increased sharply during 2020-2022.</li>
+              <li>On-time surgery performance was stronger before 2020 and has not fully returned to earlier levels.</li>
+              <li>In the latest quarter, the waiting list was 92.4K and overdue patients were 3.96K.</li>
+              <li>South Western Sydney had the highest overdue patient volume in Jan-Mar 2026.</li>
+              <li>Hunter New England had the largest waiting list in Jan-Mar 2026.</li>
+            </ul>
+          </div>
+
+          <div class="detail-card full">
+            <h2>Dashboard views</h2>
+            <div class="chart-stack">
+              <section class="chart-item">
+                <div class="chart-item-head">
+                  <h3>1. Performance over time</h3>
+                  <a class="chart-open" href="images/elective-surgery-dashboard-overview.png" target="_blank" rel="noopener">Open full size</a>
+                </div>
+                <figure class="chart-figure">
+                  <img src="images/elective-surgery-dashboard-overview.png" alt="Power BI dashboard showing NSW elective surgery waiting list, total surgeries, overdue patients and on-time rate from 2010 to 2026" loading="lazy" />
+                </figure>
+                <p class="chart-takeaway"><strong>Key takeaway:</strong> Waiting list pressure increased over time. The biggest disruption appears around 2020-2022, when overdue patients rose and on-time performance dropped.</p>
+              </section>
+
+              <section class="chart-item">
+                <div class="chart-item-head">
+                  <h3>2. LHD comparison</h3>
+                  <a class="chart-open" href="images/elective-surgery-lhd-comparison.png" target="_blank" rel="noopener">Open full size</a>
+                </div>
+                <figure class="chart-figure">
+                  <img src="images/elective-surgery-lhd-comparison.png" alt="Power BI dashboard comparing elective surgery waiting lists, overdue patients, on-time rate and total surgeries by Local Health District in Jan-Mar 2026" loading="lazy" />
+                </figure>
+                <p class="chart-takeaway"><strong>Key takeaway:</strong> Latest-quarter pressure is not evenly spread. South Western Sydney and Hunter New England stand out for backlog and waiting list volume.</p>
+              </section>
+            </div>
+          </div>
+
+          <div class="detail-card">
+            <h2>How I built the dashboard</h2>
+            <ul class="detail-list">
+              <li>Loaded public NSW elective surgery performance data into Power BI.</li>
+              <li>Created views for NSW, LHD and hospital reporting levels.</li>
+              <li>Built summary cards for total surgeries, waiting list growth, overdue patient growth and on-time rate.</li>
+              <li>Added trend charts to show long-term changes from 2010 to 2026.</li>
+              <li>Added LHD comparison charts to make the latest-quarter pressure easier to scan.</li>
+            </ul>
+          </div>
+
+          <div class="detail-card">
+            <h2>What I would check next</h2>
+            <ul class="detail-list">
+              <li>Compare results by urgency category and specialty.</li>
+              <li>Review hospital-level results inside the highest-pressure LHDs.</li>
+              <li>Check whether seasonality or scheduling patterns affect the latest-quarter results.</li>
+              <li>Compare waiting list pressure with surgery volume and on-time rate together.</li>
+              <li>Check cancellation, theatre capacity and staffing context if available.</li>
+            </ul>
+          </div>
+
+          <div class="detail-card full">
+            <h2>Data notes</h2>
+            <ul class="detail-list">
+              <li>Source: public NSW elective surgery performance data used for a portfolio Power BI dashboard.</li>
+              <li>The dashboard covers Jan 2010 to Mar 2026.</li>
+              <li>The latest-quarter view shown here is Jan-Mar 2026.</li>
+              <li>The Power BI embed is public and should only include public, non-sensitive data.</li>
+              <li>This dashboard shows patterns and pressure points. It does not prove the cause of the changes.</li>
+            </ul>
+          </div>
+
+          <div class="detail-card full">
+            <h2>Project files</h2>
+            <div class="file-list">
+              <a class="file-link" href="https://app.powerbi.com/view?r=eyJrIjoiYjdlMjUyMGUtMGU5Yy00NzFmLTgxZGYtMDdkZmU3NmIyOTkxIiwidCI6IjNjMDdlNzJiLTEzNzUtNDk4NC1hOTc3LTM1ZmE2NWMyYTMxZCJ9" target="_blank" rel="noopener">
+                <span>
+                  <span class="file-title">Interactive Power BI dashboard</span>
+                  <span class="file-meta">Public dashboard with filters for reporting level and Local Health District.</span>
+                </span>
+                <span class="file-action">Open dashboard</span>
+              </a>
+              <a class="file-link" href="downloads/elective-surgery-power-bi-dashboard.pdf" download>
+                <span>
+                  <span class="file-title">Elective surgery dashboard PDF</span>
+                  <span class="file-meta">Two-page export of the Power BI dashboard views.</span>
+                </span>
+                <span class="file-action">Download</span>
+              </a>
+              <a class="file-link" href="https://github.com/epraj/heyarisha/tree/main/downloads" target="_blank" rel="noopener">
+                <span>
+                  <span class="file-title">GitHub project files</span>
+                  <span class="file-meta">Project assets in the heyarisha.com repository.</span>
+                </span>
+                <span class="file-action">Open GitHub</span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+        <footer style="margin-top:36px; border-top:1px solid var(--border); padding-top:20px;">
+          <div class="footer-inner">
+            <div class="footer-copy">© <span id="y3"></span> Arina Rud · Portfolio case study</div>
+            <a class="btn btn-ghost" href="#projects" style="font-size:.85rem;">← Back to projects</a>
+          </div>
+        </footer>
+      </div>
+    </div>
   </main>
 
   <script>
     const now = new Date();
     document.getElementById("y").textContent = now.getFullYear();
     document.getElementById("y2").textContent = now.getFullYear();
+    document.getElementById("y3").textContent = now.getFullYear();
     document.getElementById("d").textContent = now.toLocaleDateString(undefined, { year:"numeric", month:"short" });
 
     const resumeToggle = document.getElementById('resumeToggle');
@@ -1117,14 +1301,22 @@
     }
 
     const homeEl  = document.getElementById('home');
-    const projEl  = document.getElementById('project-ed');
+    const projectPages = Array.from(document.querySelectorAll('.project-page'));
 
     function route() {
       const h = window.location.hash || '#home';
-      const onProject = h === '#project-ed';
-      homeEl.style.display = onProject ? 'none'  : 'block';
-      projEl.style.display = onProject ? 'block' : 'none';
-      if (onProject) window.scrollTo({ top: 0 });
+      const activeProject = projectPages.find((page) => `#${page.id}` === h);
+      homeEl.style.display = activeProject ? 'none'  : 'block';
+      projectPages.forEach((page) => {
+        page.style.display = page === activeProject ? 'block' : 'none';
+      });
+      if (activeProject) window.scrollTo({ top: 0 });
+      if (!activeProject && h !== '#home') {
+        requestAnimationFrame(() => {
+          const target = document.querySelector(h);
+          if (target) target.scrollIntoView({ block: 'start' });
+        });
+      }
     }
 
     window.addEventListener('hashchange', route);
